@@ -1,0 +1,20 @@
+This repo contains the codes used for the analysis and figures in McKinnon et al. (2016), The Changing Shape of Northern Hemisphere summer temperature distributions, JGR-Atmospheres.
+
+The code 'main.m' is the wrapper for all of the other functions.
+
+The code relies on analysis of large amounts of data, and WILL NOT run as is.
+
+To use the code, it is first necessary to:
+(1) create a database with GHCND data in the same format as the example file (USC00050848.mat) and metadata (metadata.mat). Contact me (mckinnon@ucar.edu) for more information.
+
+(2) fill in the appropriate directory paths in the codes in terms of where the GHCND data is, where you'd like your figures saved, etc.
+
+(3) (optional) If you would also like to do the comparative analysis with hourly data, the ISD data can be downloaded using the code getHourly.R.
+
+Because the quantile regression analysis is computationally intensive (many bootstrap samples), the code has been set up in a very basic way to be parallelized. The parameter 'nIntervals' can be changed to the number of machines/cores you have available. Then, using a bash script or similar, create different versions of the main code that each have a different runNumber, up to nIntervals. The code will automatically save the subsets of the analysis. After each subset is done, the runNumber can be changed to 0, at which point the code will stitch together all of the subsets.
+
+All figure printing requires the external package export_fig. 
+
+It is likely that I have overlooked a subfunction or two that are required somewhere in the codes. Please be in touch if additional codes are needed.
+
+Questions/comments/concerns/ideas: mckinnon@ucar.edu
