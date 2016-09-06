@@ -1,7 +1,7 @@
 % Main wrapper code for McKinnon et al (2016)
 % The changing shape of Northern Hemisphere summer temperature distributions
 % JGR Atmospheres
-% doi: 10.1002/2016JD025292
+% doi: 10.1002/2016JD025292 
   
 figure('visible','off')
 
